@@ -1,39 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FIGRO</title>
-  <meta name="description" content="FIGRO is an AI-powered real-time accounting platform that automates bookkeeping, reporting, and instant accounts for businesses.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FIGRO — Real-Time Accounting, Powered by AI</title>
+  <meta name="description" content="FIGRO turns bank data into instant, tax-ready accounts. Real-time bookkeeping, instant past-year accounts from bank statements, CSV or PDFs, and live insights.">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
+    :root{
+      --brand:#0f62fe;      /* primary */
+      --ink:#0f172a;        /* deep text */
+      --muted:#475569;      /* secondary text */
+      --bg:#ffffff;         /* page bg */
+      --card:#f8fafc;       /* card bg */
+      --ring:rgba(15,98,254,.25);
+      --radius:18px;
     }
-    h1 {
-      color: #2c3e50;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    /* Buttons */
+    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:600;border:2px solid transparent;transition:.2s}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px var(--ring)}
+    .btn-ghost{background:#fff;border-color:#e2e8f0}
+    .btn-ghost:hover{background:#f1f5f9}
+
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;color:#0b1220;
+      background:#eef2ff;
+      background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80');
+      background-size:cover;background-position:center;
     }
-    p {
-      font-size: 18px;
-      color: #555;
+    .hero:before{
+      content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.95));
     }
-    .cta {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+    .hero-inner{position:relative;z-index:1;padding:90px 0 70px}
+    .logo{
+      width:56px;height:56px;border-radius:14px;background:var(--brand);
+      display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:1px
     }
-    .cta:hover {
-      background: #0056b3;
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #e2e8f0;color:var(--muted);font-size:12px;margin-top:14px}
+    .hero h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:18px 0 12px}
+    .hero p{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:720px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+    /* Slogans */
+    .slogans{margin:28px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.9);
+      border:1px solid #e2e8f0;font-size:14px;color:#0b1220;cursor:pointer;
+      transition:.2s
     }
+    .pill:hover{transform:translateY(-1px)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-head{margin-bottom:28px}
+    .section-head h2{font-size:28px;margin:0 0 8px}
+    .section-head p{color:var(--muted);margin:0}
+
+    /* Features */
+    .grid{display:grid;gap:18px}
+    @media(min-width:800px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);
+      padding:18px;height:100%
+    }
+    .icon{
+      width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid #e2e8f0;
+      display:grid;place-items:center;margin-bottom:12px;font-size:20px
+    }
+    .card h3{margin:4px 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* How It Works */
+    .steps{display:grid;gap:16px}
+    @media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);padding:18px}
+    .step .n{font-weight:700;color:var(--brand)}
+    .step h4{margin:6px 0 8px}
+
+    /* Image block */
+    .image-block{
+      background:#0b1220;border-radius:var(--radius);overflow:hidden;color:#d6e0ff;
+      display:grid;grid-template-columns:1fr;align-items:center
+    }
+    @media(min-width:900px){.image-block{grid-template-columns:1.1fr .9fr}}
+    .image-block .img{min-height:280px;background:url('https://images.unsplash.com/photo-1551281044-8b59a9a58f50?auto=format&fit=crop&w=1600&q=80') center/cover}
+    .image-block .copy{padding:22px}
+    .image-block h3{margin:0 0 6px}
+    .image-block p{color:#a5b4fc}
+
+    /* Proof */
+    .proof{display:flex;gap:24px;flex-wrap:wrap;align-items:center;color:var(--muted)}
+    .mini-logo{
+      width:84px;height:38px;border-radius:10px;background:#f1f5f9;border:1px dashed #cbd5e1
+    }
+
+    /* Footer */
+    footer{padding:36px 0;border-top:1px solid #e2e8f0;color:var(--muted)}
+    .foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+    .foot-row a{color:var(--muted)}
   </style>
 </head>
 <body>
-  <h1>Welcome to FIGRO</h1>
-  <p>Your AI-powered real-time accounting platform.</p>
-  <a href="#" class="cta">Get Started</a>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="logo" aria-label="FIGRO logo">FG</div>
+      <span class="tag">Real-time accounting • AI-powered</span>
+      <h1>From bank feed to <u>tax-ready accounts</u> — instantly.</h1>
+      <p>FIGRO automates bookkeeping from live bank feeds and documents (CSV & PDFs), generates instant past-year accounts, and gives you real-time insights without spreadsheets or stress.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#get-started">Get Started</a>
+        <a class="btn btn-ghost" href="#features">See how it works</a>
+      </div>
+
+      <!-- SLOGANS -->
+      <div class="slogans" id="slogans">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HOW IT WORKS -->
+    <section id="how">
+      <div class="section-head">
+        <h2>How FIGRO works</h2>
+        <p>Three steps. Minutes, not months.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h4>Connect or upload</h4>
+          <p>Securely connect your bank via Open Banking, or upload CSV/PDF statements to backfill history.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h4>AI categorises & reconciles</h4>
+          <p>Transactions are enriched, categorised, and reconciled automatically — no manual data entry.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h4>Instant accounts & insights</h4>
+          <p>See real-time P&L, balance sheet, VAT estimates, and export tax-ready reports on demand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="section-head">
+        <h2>Why businesses choose FIGRO</h2>
+        <p>Built for speed, accuracy, and peace of mind.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Instant past-year accounts</h3>
+          <p>New to bookkeeping? FIGRO converts historical bank data (even PDFs) into tax-ready accounts, fast.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔗</div>
+          <h3>Live bank feeds</h3>
+          <p>Stay in sync with secure Open Banking connections and automated daily refreshes.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>AI categorisation</h3>
+          <p>Smart enrichment and categorisation reduce errors and eliminate repetitive tasks.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Real-time reporting</h3>
+          <p>Always-on P&L, cashflow, and balance sheet — close the month every day.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧾</div>
+          <h3>Receipts & invoices</h3>
+          <p>Match documents to transactions automatically and keep a clean, searchable audit trail.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔒</div>
+          <h3>Security by design</h3>
+          <p>Bank-grade encryption, SSO options, and UK/EU data residency choices.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK IMAGE BLOCK -->
+    <section>
+      <div class="image-block">
+        <div class="img" role="img" aria-label="Analytics dashboard illustration"></div>
+        <div class="copy">
+          <h3>See cash, not clutter</h3>
+          <p>Track burn, runway, and growth with live dashboards. Export polished reports for investors, lenders, or HMRC in a click.</p>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="#get-started">Try FIGRO</a>
+            <a class="btn btn-ghost" href="#contact">Talk to us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section aria-label="Trusted by">
+      <div class="section-head">
+        <h2>Made for founders, accountants, and SMEs</h2>
+        <p>Get set up in minutes. Scale with confidence.</p>
+      </div>
+      <div class="proof">
+        <div class="mini-logo" aria-hidden="true"></div>
+        <div class="mini-logo" aria-hidden="true"></div>
+        <div class="mini-logo" aria-hidden="true"></div>
+        <div class="mini-logo" aria-hidden="true"></div>
+        <span>Place your client logos here.</span>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="get-started">
+      <div class="section-head">
+        <h2>Ready to see FIGRO in action?</h2>
+        <p>Join the waitlist or book a 15-minute demo.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:hello@figro.co.uk?subject=FIGRO%20Demo%20Request">Book a demo</a>
+        <a class="btn btn-ghost" href="mailto:hello@figro.co.uk?subject=Join%20the%20FIGRO%20Waitlist">Join the waitlist</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container foot-row" id="contact">
+      <div>© <span id="y"></span> FIGRO. All rights reserved.</div>
+      <div><a href="mailto:hello@figro.co.uk">hello@figro.co.uk</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Slogans
+    const slogans = [
+      "Books done before breakfast.",
+      "From bank feed to balance sheet in minutes.",
+      "Close the month every day.",
+      "Past-year accounts, instantly.",
+      "See cash, not clutter.",
+      "Automate. Reconcile. Relax.",
+      "Real-time numbers. Real-world decisions.",
+      "Zero spreadsheets. Zero stress.",
+      "Your accounts, always up to date.",
+      "The fastest way to tax-ready."
+    ];
+    const wrap = document.getElementById('slogans');
+    slogans.forEach((s, i) => {
+      const el = document.createElement('button');
+      el.className = 'pill';
+      el.type = 'button';
+      el.textContent = s;
+      el.setAttribute('aria-label','slogan '+(i+1));
+      wrap.appendChild(el);
+    });
+
+    // Auto-highlight one slogan every few seconds
+    let idx = 0;
+    setInterval(()=>{
+      const pills = [...document.querySelectorAll('.pill')];
+      pills.forEach(p => p.style.outline = 'none');
+      const p = pills[idx % pills.length];
+      p.style.outline = '3px solid var(--ring)';
+      p.style.outlineOffset = '2px';
+      idx++;
+    }, 2200);
+  </script>
 </body>
 </html>
