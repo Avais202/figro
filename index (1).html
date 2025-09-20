@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIGRO - AI Real-Time Accounting</title>
+  <meta name="description" content="Bank-to-balance-sheet automation. Instant past-year accounts from bank feeds, CSV, and PDFs.">
+  <meta property="og:title" content="FIGRO - AI Real-Time Accounting">
+  <meta property="og:description" content="Bank-to-balance-sheet automation. Instant past-year accounts from bank feeds, CSV, and PDFs.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 700: '#0b1f3b' },
+            accent: { 600: '#ea580c' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" aria-label="FIGRO Home"><img src="/assets/logo.png" alt="FIGRO" class="h-8 w-auto"></a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#features" class="hover:text-brand-700">Features</a>
+          <a href="#how" class="hover:text-brand-700">How it works</a>
+          <a href="#pricing" class="hover:text-brand-700">Pricing</a>
+          <a href="#contact" class="hover:text-brand-700">Contact</a>
+          <a href="#cta" class="inline-flex items-center rounded-md bg-brand-700 px-4 py-2 font-semibold text-white">Get Started</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-expanded="false" aria-controls="mobileNav" aria-label="Open Menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobileNav" class="hidden md:hidden border-t border-gray-100">
+      <div class="px-4 py-3 space-y-1">
+        <a href="#features" class="block py-2">Features</a>
+        <a href="#how" class="block py-2">How it works</a>
+        <a href="#pricing" class="block py-2">Pricing</a>
+        <a href="#contact" class="block py-2">Contact</a>
+        <a href="#cta" class="inline-flex items-center rounded-md bg-brand-700 px-4 py-2 font-semibold text-white">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative overflow-hidden bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl text-brand-700">AI Real-Time Accounting for SMEs</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          FIGRO turns raw bank data into clean ledgers and a full balance sheet in real time. It can even produce instant past-year accounts from bank feeds, CSVs, and PDFs.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-4">
+          <a href="#cta" class="inline-flex items-center rounded-md bg-brand-700 px-6 py-3 text-base font-semibold text-white">Book a Demo</a>
+          <a href="#features" class="text-base font-semibold leading-6 text-brand-700">See features →</a>
+        </div>
+      </div>
+      <div class="mt-12 rounded-xl border bg-gray-50 p-4 text-center">
+        <span class="text-sm font-semibold tracking-wide text-accent-600">FIGRO has so much to offer:</span>
+        <div class="mt-2 text-sm text-gray-700">BANK TO BALANCE SHEET • AI LEDGERS • AUTOMATED CODING • PDF/CSV INGESTION</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold">From bank lines to signed-off numbers</h2>
+        <p class="mt-4 text-gray-600">Outcome-focused automation built for accountants and founders.</p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">Bank → Balance Sheet</h3><p class="mt-2 text-sm text-gray-600">Ingestion from feeds, CSV, and PDFs. Auto-reconciles to ledgers.</p></article>
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">AI Ledgers</h3><p class="mt-2 text-sm text-gray-600">Auto-categorisation & journal suggestions with review/override.</p></article>
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">Instant Past-Year Accounts</h3><p class="mt-2 text-sm text-gray-600">Rebuild last year’s financials fast from raw statements.</p></article>
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">Exports & Filing</h3><p class="mt-2 text-sm text-gray-600">Output reports for your accounting system and filings.</p></article>
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">Collaboration</h3><p class="mt-2 text-sm text-gray-600">Invite clients or your accountant. Role-based access.</p></article>
+        <article class="rounded-xl border p-6"><h3 class="font-semibold">Security</h3><p class="mt-2 text-sm text-gray-600">Bank-grade encryption and audit trail.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center">How FIGRO works</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="rounded-xl border bg-white p-6"><div class="text-sm uppercase tracking-wider text-gray-500">Step 1</div><h3 class="mt-2 font-semibold">Connect</h3><p class="mt-2 text-sm text-gray-600">Link bank feeds or upload CSV/PDF statements.</p></div>
+        <div class="rounded-xl border bg-white p-6"><div class="text-sm uppercase tracking-wider text-gray-500">Step 2</div><h3 class="mt-2 font-semibold">Classify</h3><p class="mt-2 text-sm text-gray-600">AI-led categorisation, rules, and reconciliations.</p></div>
+        <div class="rounded-xl border bg-white p-6"><div class="text-sm uppercase tracking-wider text-gray-500">Step 3</div><h3 class="mt-2 font-semibold">Report</h3><p class="mt-2 text-sm text-gray-600">Balance sheet, P&L, and exports.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center"><h2 class="text-3xl font-bold">Simple pricing</h2><p class="mt-2 text-gray-600">Start free. Upgrade when you’re ready.</p></div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <div class="border rounded-2xl p-6"><h3 class="font-semibold">Starter</h3><p class="mt-2 text-sm text-gray-600">For validation</p><div class="mt-4 text-3xl font-extrabold">£0</div><ul class="mt-4 space-y-2 text-sm text-gray-600"><li>1 company</li><li>Bank import (CSV/PDF)</li><li>Email support</li></ul><a href="#cta" class="mt-6 inline-flex w-full justify-center rounded-md bg-gray-900 px-4 py-2 font-semibold text-white">Get started</a></div>
+        <div class="border rounded-2xl p-6 ring-2 ring-accent-600"><h3 class="font-semibold">Growth</h3><p class="mt-2 text-sm text-gray-600">For building traction</p><div class="mt-4 text-3xl font-extrabold">£29<span class="text-base font-medium text-gray-500">/mo</span></div><ul class="mt-4 space-y-2 text-sm text-gray-600"><li>Bank feeds</li><li>AI ledgers</li><li>Priority support</li></ul><a href="#cta" class="mt-6 inline-flex w-full justify-center rounded-md bg-accent-600 px-4 py-2 font-semibold text-white">Choose Growth</a></div>
+        <div class="border rounded-2xl p-6"><h3 class="font-semibold">Scale</h3><p class="mt-2 text-sm text-gray-600">For teams</p><div class="mt-4 text-3xl font-extrabold">£99<span class="text-base font-medium text-gray-500">/mo</span></div><ul class="mt-4 space-y-2 text-sm text-gray-600"><li>Unlimited companies</li><li>Team roles & approvals</li><li>Dedicated manager</li></ul><a href="#cta" class="mt-6 inline-flex w-full justify-center rounded-md bg-gray-900 px-4 py-2 font-semibold text-white">Contact sales</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-extrabold">Ready to see FIGRO in action?</h2>
+      <p class="mt-3 text-gray-600">Put real numbers in front of stakeholders today.</p>
+      <a href="#contact" class="mt-6 inline-flex items-center rounded-md bg-brand-700 px-6 py-3 font-semibold text-white">Book a Demo</a>
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center">Get in touch</h2>
+      <form name="contact" method="POST" data-netlify="true" class="mt-10 grid gap-4 bg-white p-6 rounded-xl border">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div><label for="name" class="block text-sm font-medium">Name</label><input id="name" name="name" required class="mt-1 w-full rounded-md border px-3 py-2" placeholder="Your name"></div>
+          <div><label for="email" class="block text-sm font-medium">Email</label><input id="email" name="email" type="email" required class="mt-1 w-full rounded-md border px-3 py-2" placeholder="you@company.com"></div>
+        </div>
+        <div><label for="message" class="block text-sm font-medium">Message</label><textarea id="message" name="message" rows="4" required class="mt-1 w-full rounded-md border px-3 py-2" placeholder="What are you building?"></textarea></div>
+        <button type="submit" class="inline-flex items-center rounded-md bg-brand-700 px-6 py-3 font-semibold text-white">Send</button>
+      </form>
+      <p class="mt-6 text-center text-sm text-gray-500">Prefer email? <a href="mailto:hello@figro.co.uk" class="underline">hello@figro.co.uk</a></p>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t">
+    <div class="max-w-7xl mx-auto px-6 space-y-4 text-sm text-gray-600">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2"><img src="/assets/logo.png" alt="FIGRO" class="h-6 w-auto"><span>© <span id="year"></span> FIGRO AI LTD. All rights reserved.</span></div>
+        <nav class="flex gap-4"><a href="#" class="hover:text-gray-800">Privacy</a><a href="#" class="hover:text-gray-800">Terms</a><a href="#contact" class="hover:text-gray-800">Contact</a></nav>
+      </div>
+      <div class="text-xs text-gray-500"><div><span class="font-semibold">Company number:</span> 16730423</div><div><span class="font-semibold">Registered office address:</span> 164 New Cavendish Street, London, England, W1W 6YT</div></div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => {
+      const isHidden = nav.classList.contains('hidden');
+      nav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(isHidden));
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
